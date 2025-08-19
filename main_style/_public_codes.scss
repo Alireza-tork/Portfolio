@@ -1,0 +1,157 @@
+@font-face {
+    font-family: "yekan";
+    src: url(../font/collection-persian-web-font/yekan-font/Yekan.ttf);
+    src: url(../font/collection-persian-web-font/yekan-font/yekan-regular.ttf);
+}
+*{
+    box-sizing: border-box;
+    font-family: "yekan";
+    scroll-behavior: smooth;
+}
+// =========
+// condition
+// =========
+.btn_style{
+    text-decoration: none;
+    color: $main_font_color;
+    width: 100px;
+    line-height: 35px;
+    border-radius: 32px;
+    text-align: center;
+    margin: 5px 20px;
+    padding: 0 5px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    i{
+        display: inline-block;
+        margin-inline-start: 5px
+    }
+}
+@mixin btnsLiketyle ($border, $bg_color) {
+    
+    @extend .btn_style;
+
+    // border darad
+    @if($border>0) {
+        box-shadow: 0 0 5px $bg_color;
+        background-color: $main_back;
+    }
+    //    border nadarad
+    @else {
+        background-color: $bg_color;
+        border:1px solid $main_font_color;
+        color: $main_back;
+    }
+}
+// =========
+// extend
+// =========
+.lil_texts{
+    color: $lil_text;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+// =========
+// mixin
+// =========
+@mixin titles_style ($font_size,$paddin_top) {
+    font-size: $font_size;
+    font-weight: bolder;
+    padding-top: $paddin_top;
+    color: $main_font_color;
+}
+@mixin cart_style ($bg_color ,$span_color ,$width_cart) {
+    width: $width_cart; 
+        height: 200px;
+        border-radius: 8px;
+        background-color: $main_back;
+        box-shadow: 0 2px 3px $lil_text;
+        position: relative;
+        text-align: center;
+        span{
+            position: absolute;
+            right: 0;
+            top: 10%;
+            background-color: $bg_color;
+            padding: 5px 15px;
+            border-radius: 32px 0 0 32px;
+            color: $span_color;
+        }
+        img{
+            padding-top: 20px;
+        }
+        a{
+            display: block;
+            width: 150px;
+            margin: 30px auto 0 auto;
+            padding: 0 5px;
+            text-decoration: none;
+            color: whitesmoke;
+            background-color: $bg_color;
+            border-radius: 32px;
+            i{
+                margin-inline-end: 5px;
+            }
+        }
+}
+
+// =========
+// keyframes
+// =========
+@keyframes role_change {
+    0%{
+        transform: translateX(0%);
+    }
+    25%{
+        transform: translateX(0%);
+    }
+    50%{
+        transform: translateX(-130%);
+    }
+    75%{
+        transform: translateX(-130%);
+    }
+    100%{
+        transform: translateX(0%);
+    }
+}
+@keyframes tarahi {
+    0%{
+        box-shadow: 0 0 2px 0px $design_color;
+    }
+
+    50%{
+        box-shadow: 0 0 10px 5px $design_color;
+    }
+
+    100%{
+        box-shadow: 0 0 2px 0px $design_color;
+    }
+}
+@keyframes flashup {
+    0%{
+        transform: translateY(100px) scale(1);
+        opacity: 0;
+    }
+
+    50%{
+        transform: translateY(0) scale(1.3);
+        opacity: 1;
+    }
+
+    100%{
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
+// =========
+// dashed
+// =========
+.dashed_div{
+    border: 1px dashed $lil_text;
+        width: 95%;
+        margin: 20px auto;
+        height: 0;
+}
+
